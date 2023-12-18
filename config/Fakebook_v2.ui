@@ -1,0 +1,3476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Fakebook Generator</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1000</width>
+      <height>579</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tab_features">
+     <attribute name="title">
+      <string>Features</string>
+     </attribute>
+     <widget class="QGroupBox" name="features_groupBox_enableFeatures">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>971</width>
+        <height>491</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Enable Features</string>
+      </property>
+      <widget class="QCheckBox" name="features_checkBox_enableChat">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Allow chats</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="features_checkBox_enableAdvertisements">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Advertisements</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="features_checkBox_enableComments">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>180</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Comments</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="features_checkBox_enableReportsPosts">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>250</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Allow users to flag</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="features_label_chatExplanation">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>60</y>
+         <width>841</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>If enabled, users have a friends page and can see, send and receive friend requests and direct messages
+Users can still see posts of other users if disabled</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="features_label_advertisementExplanation">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>140</y>
+         <width>841</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>If enabled, researchers can include ads which are shown on the right side of the website</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="features_label_commentsExplanation">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>210</y>
+         <width>841</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>If enabled, users can comment on posts</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="features_label_postExplanation_1">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>250</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>posts</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="features_label_postExplanation_2">
+       <property name="geometry">
+        <rect>
+         <x>205</x>
+         <y>250</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>as inappropriate</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="features_checkBox_postImmediatelyInvisible">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>280</y>
+         <width>501</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Immediately make posts invisible to user who has flagged the post</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="features_checkBox_postInvisibleAtCount">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>300</y>
+         <width>431</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Make post invisible to all users after a set ammount of flags:</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="features_spinBox_posts">
+       <property name="geometry">
+        <rect>
+         <x>460</x>
+         <y>300</y>
+         <width>44</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="features_checkBox_enableReportsComments">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>330</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Allow users to flag</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="features_label_commentExplanation_1">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>330</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>comments</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="features_label_commentExplanation_2">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>330</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>as inappropriate</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="features_checkBox_commentImmediatelyInvisible">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>360</y>
+         <width>501</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Immediately make comment invisible to user who has flagged the post</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="features_checkBox_commentInvisibleAtCount">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>380</y>
+         <width>471</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Make comment invisible to all users after a set ammount of flags:</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="features_spinBox_comments">
+       <property name="geometry">
+        <rect>
+         <x>500</x>
+         <y>380</y>
+         <width>44</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="features_checkBox_advertisementInvisibleAtCount">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>460</y>
+         <width>421</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Make ad invisible to all users after a set ammount of flags:</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="features_spinBox_advertisements">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>460</y>
+         <width>44</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="features_label_advertisementExplanation_1">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>410</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>ads</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="features_checkBox_advertisementImmediatelyInvisible">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>440</y>
+         <width>501</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Immediately make ad invisible to user who has flagged the post</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="features_checkBox_enableReportsAdvertisements">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>410</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Allow users to flag</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="features_label_advertisementExplanation_2">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>410</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>as inappropriate</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="features_button_launch">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>510</y>
+        <width>191</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Launch</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_users">
+     <attribute name="title">
+      <string>Users</string>
+     </attribute>
+     <widget class="QGroupBox" name="users_groupBox_userProfile">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>10</y>
+        <width>661</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>User Profile</string>
+      </property>
+      <widget class="QLabel" name="users_label_username">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>30</y>
+         <width>71</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Username</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="users_lineEdit_username">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>30</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="users_lineEdit_firstName">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>60</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="users_label_firstName">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>60</y>
+         <width>81</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>First Name</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="users_lineEdit_lastName">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>90</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="users_label_lastName">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>90</y>
+         <width>81</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Last Name</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="users_label_bio">
+       <property name="geometry">
+        <rect>
+         <x>380</x>
+         <y>30</y>
+         <width>31</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Bio</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="users_plainTextEdit_bio">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>30</y>
+         <width>221</width>
+         <height>61</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="users_label_avatar">
+       <property name="geometry">
+        <rect>
+         <x>380</x>
+         <y>110</y>
+         <width>51</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Avatar</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="users_label_avatarPath">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>110</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::WinPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="indent">
+        <number>-1</number>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="users_button_browseAvatar">
+       <property name="geometry">
+        <rect>
+         <x>580</x>
+         <y>110</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Browse...</string>
+       </property>
+      </widget>
+      <widget class="QGraphicsView" name="users_image_profilePicture">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>30</y>
+         <width>91</width>
+         <height>111</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="users_groupBox_friends">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>200</y>
+         <width>621</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Friends</string>
+       </property>
+       <widget class="QLabel" name="users_label_allUsers">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>All Users</string>
+        </property>
+       </widget>
+       <widget class="QTreeWidget" name="users_list_allUsers">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>161</width>
+          <height>191</height>
+         </rect>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <attribute name="headerDefaultSectionSize">
+         <number>59</number>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Username</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="QPushButton" name="users_button_allToInvited">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>130</y>
+          <width>41</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>--&gt;</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="users_button_invitedToAll">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>170</y>
+          <width>41</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;--</string>
+        </property>
+       </widget>
+       <widget class="QTreeWidget" name="users_list_invited">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>50</y>
+          <width>161</width>
+          <height>191</height>
+         </rect>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <attribute name="headerDefaultSectionSize">
+         <number>59</number>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Username</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="QLabel" name="users_label_invited">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>30</y>
+          <width>67</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Invited</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="users_button_invitedToFriends">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>130</y>
+          <width>41</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>--&gt;</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="users_button_friendsToInvited">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>170</y>
+          <width>41</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;--</string>
+        </property>
+       </widget>
+       <widget class="QTreeWidget" name="users_list_friends">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>50</y>
+          <width>161</width>
+          <height>191</height>
+         </rect>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <attribute name="headerDefaultSectionSize">
+         <number>59</number>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Username</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="QLabel" name="users_label_friends">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>30</y>
+          <width>67</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Friends</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="users_button_saveChanges">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>470</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Save Changes</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="users_button_discardChanges">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>470</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Discard Changes</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="users_label_gender">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>120</y>
+         <width>81</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Gender</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="users_label_password">
+       <property name="geometry">
+        <rect>
+         <x>380</x>
+         <y>150</y>
+         <width>71</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Password</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="users_button_setPassword">
+       <property name="geometry">
+        <rect>
+         <x>580</x>
+         <y>150</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Set</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="users_lineEdit_setPassword">
+       <property name="geometry">
+        <rect>
+         <x>460</x>
+         <y>150</y>
+         <width>111</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="users_label_email">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>150</y>
+         <width>81</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Email</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="users_lineEdit_email">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>150</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="users_comboBox_selectGender">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>120</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>(not set)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Female</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Male</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Divers</string>
+        </property>
+       </item>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="users_groupBox_userList">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>301</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>User List</string>
+      </property>
+      <widget class="QPushButton" name="users_button_deleteUser">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>500</y>
+         <width>81</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="users_button_copyUser">
+       <property name="geometry">
+        <rect>
+         <x>112</x>
+         <y>500</y>
+         <width>81</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Copy</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="users_button_addUser">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>500</y>
+         <width>81</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Add</string>
+       </property>
+      </widget>
+      <widget class="QTreeWidget" name="users_list_userList">
+       <property name="geometry">
+        <rect>
+         <x>8</x>
+         <y>30</y>
+         <width>281</width>
+         <height>461</height>
+        </rect>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="autoExpandDelay">
+        <number>-1</number>
+       </property>
+       <property name="indentation">
+        <number>0</number>
+       </property>
+       <property name="uniformRowHeights">
+        <bool>false</bool>
+       </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="animated">
+        <bool>true</bool>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+       <property name="headerHidden">
+        <bool>false</bool>
+       </property>
+       <attribute name="headerDefaultSectionSize">
+        <number>89</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Username</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </column>
+       <item>
+        <property name="text">
+         <string>%USERS_USERLIST_ID%</string>
+        </property>
+        <property name="text">
+         <string>%USERS_USERLIST_USERNAME%</string>
+        </property>
+        <property name="text">
+         <string>%USERS_USERLIST_NAME%</string>
+        </property>
+       </item>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_posts">
+     <attribute name="title">
+      <string>Posts</string>
+     </attribute>
+     <widget class="QGroupBox" name="posts_groupBox_posts">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>10</y>
+        <width>651</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Post</string>
+      </property>
+      <widget class="QGroupBox" name="posts_groupBox_content">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>631</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Content</string>
+       </property>
+       <widget class="QComboBox" name="posts_comboBox_postAuthor">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>30</y>
+          <width>161</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="posts_label_postAuthor">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>61</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Author</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="posts_label_postText">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>70</y>
+          <width>31</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Text</string>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="posts_plainTextEdit_postText">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>70</y>
+          <width>331</width>
+          <height>81</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="posts_button_browseImage">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>160</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Browse...</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="posts_label_image">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>160</y>
+          <width>61</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Image</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="posts_label_imagePath">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>160</y>
+          <width>241</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::WinPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="indent">
+         <number>-1</number>
+        </property>
+       </widget>
+       <widget class="QGraphicsView" name="posts_image_postPicture">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>30</y>
+          <width>191</width>
+          <height>121</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="posts_groupBox_comments">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>240</y>
+         <width>631</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Comments</string>
+       </property>
+       <widget class="QTreeWidget" name="posts_list_comments">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>251</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <attribute name="headerDefaultSectionSize">
+         <number>99</number>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Content</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="QComboBox" name="posts_comboBox_commentAuthor">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>40</y>
+          <width>171</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="posts_label_commentText">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>80</y>
+          <width>31</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Text</string>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="posts_plainTextEdit_comment">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>80</y>
+          <width>271</width>
+          <height>121</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="posts_label_commentAuthor">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>40</y>
+          <width>61</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Author</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="posts_button_addComment">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>210</y>
+          <width>61</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="posts_button_deleteComment">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>210</y>
+          <width>61</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="posts_button_saveChanges">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>490</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Save Changes</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="posts_button_discardChanges">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>490</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Discard Changes</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="posts_groupBox_postList">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>321</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>All Posts</string>
+      </property>
+      <widget class="QPushButton" name="posts_button_deletePost">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>500</y>
+         <width>111</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="posts_button_addPost">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>500</y>
+         <width>111</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Add</string>
+       </property>
+      </widget>
+      <widget class="QTreeWidget" name="posts_list_posts">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>301</width>
+         <height>461</height>
+        </rect>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <attribute name="headerDefaultSectionSize">
+        <number>99</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Date</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Content</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_reactions">
+     <attribute name="title">
+      <string>Reactions</string>
+     </attribute>
+     <widget class="QGroupBox" name="reactions_groupBox_post">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>281</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Posts</string>
+      </property>
+      <widget class="QTreeWidget" name="reactions_list_posts">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>261</width>
+         <height>491</height>
+        </rect>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <attribute name="headerDefaultSectionSize">
+        <number>98</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Date</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Content</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="reactions_groupBox_user">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>10</y>
+        <width>281</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>User</string>
+      </property>
+      <widget class="QTreeWidget" name="reactions_list_user">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>261</width>
+         <height>491</height>
+        </rect>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <attribute name="headerDefaultSectionSize">
+        <number>98</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Username</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="reactions_groupBox_UserReactions">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>10</y>
+        <width>401</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>User Reactions</string>
+      </property>
+      <widget class="QTreeWidget" name="reactions_list_availableReactions">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>161</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <attribute name="headerDefaultSectionSize">
+        <number>99</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>Available Reactions</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QTreeWidget" name="reactions_list_hasReactedWith">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>30</y>
+         <width>161</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <attribute name="headerDefaultSectionSize">
+        <number>99</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>Has reacted with</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="reactions_button_addReaction">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>180</y>
+         <width>71</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Add New</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="reactions_button_deleteReaction">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>180</y>
+         <width>71</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="reactions_button_reactWith">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>80</y>
+         <width>41</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>--&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="reactions_button_undoReaction">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>120</y>
+         <width>41</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;--</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="reactions_button_saveChanges">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>500</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save Changes</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="reactions_discardChanges">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>500</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Discard Changes</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="reactions_groupBox_allReactions">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>240</y>
+        <width>401</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>All Reactions</string>
+      </property>
+      <widget class="QTreeWidget" name="reactions_list_allReactions">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>221</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <attribute name="headerDefaultSectionSize">
+        <number>98</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>Reaction</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Count</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QLineEdit" name="reactions_lineEdit_setReactionCounter">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>200</y>
+         <width>71</width>
+         <height>25</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="reactions_button_setReactionCounter">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>200</y>
+         <width>71</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Set</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="reactions_label_setReactionCounter">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>160</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Set reaction counter 
+to selected reaction</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_chats">
+     <attribute name="title">
+      <string>Chats</string>
+     </attribute>
+     <widget class="QGroupBox" name="chats_groupBox_chatMembers">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>311</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Chat members</string>
+      </property>
+      <widget class="QTreeWidget" name="chats_list_user1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>281</width>
+         <height>211</height>
+        </rect>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="autoExpandDelay">
+        <number>-1</number>
+       </property>
+       <property name="indentation">
+        <number>0</number>
+       </property>
+       <property name="uniformRowHeights">
+        <bool>false</bool>
+       </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="animated">
+        <bool>true</bool>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+       <property name="headerHidden">
+        <bool>false</bool>
+       </property>
+       <attribute name="headerDefaultSectionSize">
+        <number>89</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Username</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QTreeWidget" name="chats_list_user2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>300</y>
+         <width>281</width>
+         <height>211</height>
+        </rect>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="autoExpandDelay">
+        <number>-1</number>
+       </property>
+       <property name="indentation">
+        <number>0</number>
+       </property>
+       <property name="uniformRowHeights">
+        <bool>false</bool>
+       </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="animated">
+        <bool>true</bool>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+       <property name="headerHidden">
+        <bool>false</bool>
+       </property>
+       <attribute name="headerDefaultSectionSize">
+        <number>89</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Username</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QLabel" name="chats_label_user1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>67</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>User 1</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="chats_label_user2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>280</y>
+         <width>67</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>User 2</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="chats_groupBox_message">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>10</y>
+        <width>311</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Message</string>
+      </property>
+      <widget class="QLineEdit" name="chats_lineEdit_date">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>220</y>
+         <width>161</width>
+         <height>25</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="chats_comboBox_author">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>40</y>
+         <width>161</width>
+         <height>25</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="chats_label_author">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>61</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Author</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="chats_label_text">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>31</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Text</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="chats_label_date">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>61</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Date</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="chats_plainTextEdit_text">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>80</y>
+         <width>231</width>
+         <height>131</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="chats_groupBox_chatMessages">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>10</y>
+        <width>341</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Chat messages</string>
+      </property>
+      <widget class="QTreeWidget" name="chats_list_chatMessages">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>321</width>
+         <height>451</height>
+        </rect>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="autoExpandDelay">
+        <number>-1</number>
+       </property>
+       <property name="indentation">
+        <number>0</number>
+       </property>
+       <property name="uniformRowHeights">
+        <bool>false</bool>
+       </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="animated">
+        <bool>true</bool>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+       <property name="headerHidden">
+        <bool>false</bool>
+       </property>
+       <attribute name="headerDefaultSectionSize">
+        <number>89</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>Author</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Date</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Content</string>
+        </property>
+       </column>
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+      </widget>
+      <widget class="QPushButton" name="chats_button_addMessage">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>490</y>
+         <width>89</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Add</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="chats_button_deleteMessage">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>490</y>
+         <width>89</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="chats_button_saveChanges">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>350</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save Changes</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="chats_button_discardChanges">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>350</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Discard Changes</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_advertisements">
+     <attribute name="title">
+      <string>Advertisements</string>
+     </attribute>
+     <widget class="QGroupBox" name="advertisements_groupBox_Advertisements">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>271</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>All Advertisements</string>
+      </property>
+      <widget class="QTreeWidget" name="advertisements_list_advertisements">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>251</width>
+         <height>441</height>
+        </rect>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <attribute name="headerDefaultSectionSize">
+        <number>99</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="advertisements_button_deleteAdvertisement">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>480</y>
+         <width>81</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="advertisements_button_addAdvertisement">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>480</y>
+         <width>81</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Add</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="advertisements_groupBox_advertisement">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>10</y>
+        <width>701</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Advertisement</string>
+      </property>
+      <widget class="QLabel" name="advertisements_label_reportsCount">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>180</y>
+         <width>151</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>%AD_REPORTS%</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="advertisements_label_text">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>60</y>
+         <width>51</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Text</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="advertisements_lineEdit_text">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>60</y>
+         <width>231</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="advertisements_label_name">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>30</y>
+         <width>51</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="advertisements_label_image">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>120</y>
+         <width>61</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Image</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="advertisements_label_imagePath">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>120</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::WinPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="indent">
+        <number>-1</number>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="advertisements_button_browseImage">
+       <property name="geometry">
+        <rect>
+         <x>470</x>
+         <y>120</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Browse...</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="advertisements_label_clicks">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>150</y>
+         <width>51</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Clicks</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="advertisements_label_clicksCount">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>150</y>
+         <width>151</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>%AD_KLICKS%</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="advertisements_lineEdit_url">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>90</y>
+         <width>231</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="advertisements_label_reports">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>180</y>
+         <width>61</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Reports</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="advertisements_groupBox_tags">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>210</y>
+         <width>431</width>
+         <height>261</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Tags</string>
+       </property>
+       <widget class="QTreeWidget" name="advertisements_list_unusedTags">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>161</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <column>
+         <property name="text">
+          <string>Unused Tags</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="QTreeWidget" name="advertisements_list_appliedTags">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>30</y>
+          <width>161</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <column>
+         <property name="text">
+          <string>Applied Tags</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="QPushButton" name="advertisements_button_unusedToApplied">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>90</y>
+          <width>51</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>--&gt;</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="advertisements_button_appliedToUnused">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>120</y>
+          <width>51</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;--</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="advertisements_buton_addTag">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>210</y>
+          <width>71</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Create 
+ new</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="advertisements_buton_deleteTag">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>210</y>
+          <width>81</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Delete 
+for all</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QLineEdit" name="advertisements_lineEdit_name">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>30</y>
+         <width>231</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="advertisements_label_url">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>90</y>
+         <width>51</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>URL</string>
+       </property>
+      </widget>
+      <widget class="QGraphicsView" name="advertisements_image_advertisement">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>221</width>
+         <height>271</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="advertisements_button_saveChanges">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>480</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Save Changes</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="advertisements_button_discardChanged">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>480</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Discard Changes</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>111</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Image Preview</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_export">
+     <attribute name="title">
+      <string>Export Data</string>
+     </attribute>
+     <widget class="QLabel" name="export_label_postData">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>81</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Post Data</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_postDataTables">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>491</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>postID | authorID | date | content | pathToImage | viewingTime | flags</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_commentDataTables">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>371</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>commentID | postID | authorID | date | content | flags</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_commentData">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Comment Data</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_chatDataTables">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>301</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>chatID | user1ID | user2ID | message | date</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_chatData">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Chat Data</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_userDataTables">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>180</y>
+        <width>721</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>userID | username | firstname | lastname | email | pathToProfilePicture |
+bio | gender | reportsIssued | adsClicked</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_userData">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>User Data</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_friendshipDataTables">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>411</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>senderID | receiverID | issueDate | status | statusChangeDate</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_friendshipData">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Friendship Data</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_logInformation">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>280</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Log Information</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_logInformationTables">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>300</y>
+        <width>301</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>userID | sessionID | sessionStart | sessionEnd</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_reactionDataTables">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>350</y>
+        <width>511</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>userID | contentID | type (post or comment) | reaction | date</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_reactionData">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>330</y>
+        <width>171</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Reaction Data</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_flagDataTables">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>400</y>
+        <width>511</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>userID | contentID | type (post, comment or ad) | date</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_flagData">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>380</y>
+        <width>171</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Flag Data</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_advertisementDataTables">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>450</y>
+        <width>511</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>adID | adText | adUrl | tags | pathToImage | clicks | reports | </string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_advertisementData">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>430</y>
+        <width>171</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Advertisement Data</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_exportImageData">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>480</y>
+        <width>141</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Export image data</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_exportWholeDatabase">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>510</y>
+        <width>171</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Export whole database</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_postDataCSV">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>10</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .csv</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_postDataXLS">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>10</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .xls</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_commentDataXLS">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>60</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .xls</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_commentDataCSV">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>60</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .csv</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_chatDataXLS">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>110</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .xls</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_chatDataCSV">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>110</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .csv</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_userDataXLS">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>160</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .xls</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_userDataCSV">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>160</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .csv</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_reactionDataXLS">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>330</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .xls</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_flagDataCSV">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>380</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .csv</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_reactionDataCSV">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>330</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .csv</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_logInformationCSV">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>280</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .csv</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_flagDataXLS">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>380</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .xls</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_friendshipDataXLS">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>230</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .xls</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_logInformationXLS">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>280</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .xls</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_friendshipDataCSV">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>230</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .csv</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_advertisementDataCSV">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>430</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .csv</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_advertisementDataXLS">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>430</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export as .xls</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_exportImagePostImages">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>480</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>post_images.zip</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_exportWholeDatabase">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>510</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>export as .sqlite</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_exportImageProfilePictures">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>480</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>profile_pictures.zip</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export_button_exportImageAdImages">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>480</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ad_images.zip</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="export_label_exportWholeDatabaseInfo">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>510</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>(without images)</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_statistics">
+     <attribute name="title">
+      <string>Statistics</string>
+     </attribute>
+     <widget class="QGroupBox" name="statistics_groupBox_summary">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>971</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Summary</string>
+      </property>
+      <widget class="QLabel" name="statistics_label_user">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>Number of Users:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_posts">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>Number of Posts:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_comments">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>Number of Coments:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_databaseSize">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>350</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>Database Size:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_advertisements">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>230</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>Number of Ads:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_advertisementsClicked">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>310</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>Number Ads clicked:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_userCounter">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>30</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>%NUM_USERS%</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_postsCounter">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>70</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>%NUM_POSTS%</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_commentsCounter">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>110</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>%NUM_COMMENTS%</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_advertisementsCounter">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>230</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>%NUM_ADS%</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_advertisementsClickedCounter">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>310</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>%NUM_ADS_CLICKED%</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_databaseSizeCounter">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>350</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>%DATABASE_SIZE%</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_postsReported">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>190</y>
+         <width>181</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>Number of reportet Posts:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_postsReportedCounter">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>190</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>%NUM_COMMENTS_REPORTED%</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_advertisementsReported">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>270</y>
+         <width>171</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>Number of reported Ads:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_advertisementsReportedCounter">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>270</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>%NUM_ADS_REPORTED%</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_reactions">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>150</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>Number of Reactions:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statistics_label_reactionsCounter">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>150</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>%NUM_REACTIONS%</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_file">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="file_open"/>
+    <addaction name="file_save"/>
+    <addaction name="file_saveAs"/>
+    <addaction name="separator"/>
+    <addaction name="file_exportAsCsv"/>
+    <addaction name="separator"/>
+    <addaction name="file_quit"/>
+   </widget>
+   <widget class="QMenu" name="menu_help">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="help_documentation"/>
+    <addaction name="help_about"/>
+   </widget>
+   <addaction name="menu_file"/>
+   <addaction name="menu_help"/>
+  </widget>
+  <action name="file_open">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="file_save">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="file_quit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="help_documentation">
+   <property name="text">
+    <string>Documentation</string>
+   </property>
+  </action>
+  <action name="help_about">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="file_exportAsCsv">
+   <property name="text">
+    <string>Export As .csv</string>
+   </property>
+  </action>
+  <action name="file_saveAs">
+   <property name="text">
+    <string>Save As...</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

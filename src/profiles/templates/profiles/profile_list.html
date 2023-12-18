@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+all profiles
+{% endblock title %}
+
+{% block content %}
+
+    {% if is_empty %}
+        <h1>No profiles to interact with</h1>
+    {% endif %}
+
+    {% for obj in object_list %}
+        <div class="ui segment">
+            <div class="ui grid">
+                <div class="row">
+                    <div class="three wide column">
+                        <img class="ui small circular image" src={{obj.avatar.url}}>
+                    </div>
+                    <div class="thirteen wide column">
+                        <h3>{{obj.get_displayed_name}}</h3>
+                        <p>{{obj.bio}}</p>
+                        <a href={{obj.get_absolute_url}}><button class="ui primary button mb-5 w-big">{% trans 'see-profile-button' %}</button></a>
+                        <br>
+                        
+                        {% if obj.user not in rel_receiver and obj.user not in rel_sender and relationship_management_enabled %}
+                            <form action="{% url 'profiles:send-invite' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="profile_pk" value={{obj.pk}}>
+                                <button type="submit" class="ui positive basic button mb-5 w-big"><i class="plus square icon"></i>{% trans 'add-to-friends' %}</button>
+                            </form>
+                         {% endif %}
+
+                        {% if obj.user in rel_receiver and request.user not in obj.friends.all %}
+                            <button class="ui disabled button mb-5 w-big"><i class="user icon"></i>{% trans 'friend-req-awaiting' %}</button>
+                        {% endif %}
+
+                        {% if obj.user in rel_sender and request.user not in obj.friends.all %}
+                            <a href="{% url 'profiles:my-invites-view' %}"> <button class="ui button mb-5 w-big"><i class="fa fa-bell"></i> {% trans 'friend-req-received' %}</button> </a>
+                        {% endif %}
+
+                        {% if request.user in obj.friends.all %}
+                        {% if relationship_management_enabled %}
+                        <form action="{% url 'profiles:remove-friend' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="profile_pk" value={{obj.pk}}>
+                            <button type="submit" class="ui negative basic button mb-5 w-big"><i class="minus square icon"></i>{% trans 'remove-from-friends' %}</button>
+                        </form>
+                        {% endif %}
+                        {% if chat_enabled %}
+                            <button type="submit" onclick="chatWithUserRequested({{ obj.pk }})" class="ui positive basic button mb-5 w-big"><i class="square icon"></i>Chat</button>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock content %}

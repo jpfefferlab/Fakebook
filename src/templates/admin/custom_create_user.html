@@ -1,0 +1,89 @@
+{% extends "admin/base_site.html" %}
+
+{% load i18n static %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }}{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block extrastyle %}<link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}">{% endblock %}
+
+{% block content %}
+
+
+<p>
+    <a href="{% url 'admin:index' %}">Go back to home</a>
+</p>
+
+
+<!-- Download the excel file -->
+
+<form action="{% url 'create-user' %}" method="post">
+
+    {% csrf_token %}
+
+    <br>
+    <h1>Create a new user:</h1>
+
+    <div>
+        <fieldset class="module aligned wide">
+            <div class="form-row field-username">
+                <label class="required" for="id_username">Username:</label>
+                <input id="id_username" class="vTextField" type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus="" required="">
+                <div class="help">Required. Used as login identifier and display name if firstname not set. Has to be unique.</div>
+            </div>
+            <div class="form-row field-password">
+                <label class="required" for="id_password">Password:</label>
+                <input id="id_password" type="password" name="password" maxlength="150" autocomplete="new-password" required="">
+                <div class="help">Required. That's a password. It passwords.</div>
+            </div>
+            <div class="form-row field-email">
+                <label class="required" for="id_email">E-Mail:</label>
+                <input id="id_email" type="email" name="email" maxlength="150" required="">
+                <div class="help">Required. Can be used for login. Has to be in valid format but does not need to exist (e.g. *****@example.com). Has to be unique.</div>
+            </div>
+            <div class="form-row field-firstname">
+                <label for="id_firstname">Firstname:</label>
+                <input id="id_firstname" type="text" name="firstname" maxlength="150">
+                <div class="help">If a firstname is set, it is displayed in place of the username.</div>
+            </div>
+            <div class="form-row field-lastname">
+                <label for="id_lastname">Lastname:</label>
+                <input id="id_lastname" type="text" name="lastname" maxlength="150">
+                <div class="help">Shown in the profile.</div>
+            </div>
+            <div class="form-row field-bio">
+                <label for="id_biography">Biography:</label>
+                <input id="id_biography" type="text" name="bio" maxlength="5000">
+                <div class="help">Also shown in the profile.</div>
+            </div>
+            <div class="form-row field-country">
+                <label for="id_biography">Country:</label>
+                <input id="id_country" type="text" name="country" maxlength="5000">
+                <div class="help">"Earth" will suffice.</div>
+            </div>
+
+        </fieldset>
+    </div>
+
+{#    username = request.GET.get("username", "")#}
+{#    password = request.GET.get("password", "")#}
+{#    email = request.GET.get("email", "")#}
+{#    first_name = request.GET.get("firstName", "")#}
+{#    last_name = request.GET.get("lastName", "")#}
+{#    bio = request.GET.get("bio", "")#}
+{#    country = request.GET.get("country", "")#}
+
+    <p><input type="submit" value="Create user and profile"></p>
+
+</form>
+
+<hr>
+
+
+
+  
+{% endblock %}
+

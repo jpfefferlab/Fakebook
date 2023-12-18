@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% load i18n %}
+    <title>Fakebook</title>
+
+    {% include "lib-jquery.html" %}
+    <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+    <script src="{% static "chat/chat.js" %}"></script>
+
+    <!-- this is based on base.html, which is not included as it includes the navbar, chat manager, ... to be made available in all other pages -->
+    {% include 'ui-template-stylesheets.html' %}
+    <!--Custom css -->
+    <link rel="stylesheet" type="text/css" href={% static 'chat/chat.css' %}
+</head>
+<body>
+
+
+<div id="chat-header" class="ui segment"> <!-- header -->
+    <p>{% trans 'chat-to' %}</p>
+    <button id="chat-title"  class="ui button">{{ other_username }}</button>
+    <div id="reconnecting-indicator" style="color: darkred;display: none">{% trans 'chat-reconnecting' %}</div>
+    <i id="close-button" class="fas fa-times"> </i>
+</div>
+
+<div id="messages-view" class="ui">
+
+    <div class="message">
+        <div class="message-profile-image-other">  <img class="ui avatar image" src='/media/avatar_default.png'> </div>
+        <div class="message-bubble-other"> ... </div>
+        <p class="message-timestamp"> Sat, Jan 15 | 15:45</p>
+    </div>
+
+    <div class="message">
+        <div class="message-bubble-own"> ... </div>
+        <div class="message-profile-image-own"> <img class="ui avatar image" src='/media/avatar_default.png'> </div>
+        <p class="message-timestamp" style='padding: 0px 0px 15px 80px; font-size:12px; color:grey '> Sat, Jan 15 | 16:03</p>
+    </div>
+</div>
+
+<div id="emoji-picker-container" style="display: none"><emoji-picker></emoji-picker></div>
+
+<div id="chat-footer" class="ui segment-border-bottom">
+    <input id="message-textfield" type="text" placeholder="Aa"/>
+    <i id="reaction-drawer-button" class="fas fa-grin"> </i>
+</div>
+
+
+<script>
+    let chat_slug = "{{ slug }}" // inserted here to be read by the other script
+    let own_avatar_image_url = "{{ own_avatar_image_url }}"
+    let other_avatar_image_url = "{{ other_avatar_image_url }}"
+</script>
+
+</body>
+</html>

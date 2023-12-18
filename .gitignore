@@ -1,0 +1,27 @@
+.idea/
+.venv/
+backups/
+data/
+data-220909/
+data-planned-reactions-present/
+fakebook.iml
+__pycache__/
+
+setup-script/.ipynb_checkpoints
+setup-script/.venv
+setup-script/Bilder
+setup-script/VPs.xlsx
+
+src/templates/**/*.html.py
+src/templates/**/*.txt.py
+static_cdn/static_root/admin/**/*.txt.py
+
+# collected static files (automatically copied on docker build)
+static_cdn/static_root/analytics/
+static_cdn/static_root/chat/
+static_cdn/static_root/favicon.ico
+static_cdn/static_root/favicon2.ico
+static_cdn/static_root/login-signup-custom-style.css
+static_cdn/static_root/main.js
+static_cdn/static_root/posts-emoji-picker.js
+static_cdn/static_root/style.css

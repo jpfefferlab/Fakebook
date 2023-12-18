@@ -1,0 +1,119 @@
+
+.nav {
+    display: none !important;
+}
+
+
+
+#title-header {
+    margin-top: 7em;
+
+    /*width: 300em;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+#title-header > h1 {
+    font-size: 3em;
+    margin-bottom: 0.3em;
+    color: #2185d0;
+    font-weight: bold;
+}
+#title-header > h3 {
+    margin-top: 0em;
+}
+
+@media screen and (max-width: 540px) {
+    #title-header > h3 {
+        display: none;
+    }
+    #title-header {
+        margin-top: 3em !important;
+    }
+    #title-header > h1 {
+        font-size: 2.5em !important;
+    }
+    #login-form-panel {
+        margin-top: 2em !important;
+    }
+}
+
+.elevated-panel {
+    /* overwriting multiple semantic UI properties */
+    display: block !important;
+
+    margin-top: 4em !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 30em !important;
+    max-width: 90vw !important;
+
+    padding: 1.5em !important;
+    padding-top: 0.75em !important;
+
+    border: none !important;
+    border-radius: 0.8em !important;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1) !important;
+    box-sizing: border-box !important;
+
+    background-color: white !important;
+}
+
+
+input {
+    font-size: 1.2em !important;
+}
+input::placeholder {
+    color: #90949c !important;
+}
+
+.primary-button {
+    color: #ffffff !important; /* important as this is override semantic UI's defaults */
+    background-color: #2185d0 !important;
+    width: 100% !important;
+    font-size: 1.35em !important;
+}
+.primary-button:hover {
+    background-color: #1678c2 !important;
+}
+.secondary-button {
+    color: #ffffff !important;
+    background-color: #21ba45 !important;
+    width: 52.6% !important;
+
+    font-size: 1.2em !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.secondary-button:hover {
+    background-color: #16ab39;
+}
+
+
+.errorlist {
+    color: #cc0000 !important;
+}
+
+
+.centered {
+    display: inline-block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.separator {
+    border-bottom: 1px solid #c0c0c6;
+
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+
+

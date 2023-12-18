@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Signup" %}{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" type="text/css" href={% static 'login-signup-custom-style.css' %}>
+
+    <style>
+
+    label {
+        display: none;
+    }
+
+    </style>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="ui grid" style="display: block">
+  <div id="title-header">
+    <h1>Fakebook</h1>
+    <h3>Account Creation</h3>
+  </div>
+
+  <div id="register-form-panel" class="column elevated-panel">
+    <form class="signup ui form" id="signup_form" method="post" action="{% url 'account_signup' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <button type="submit" class="ui primary button primary-button">{% trans "Sign Up" %}</button>
+    </form>
+
+    <div class="separator"></div>
+
+    <a class="button secondaryAction centered" href="{{ login_url }}" style="width: 100%">
+      <button id="login-dialog-button" class="ui button secondary secondary-button">{% trans "Already have an account?" %}</button>
+    </a><br>
+  </div>
+</div>
+
+
+{% endblock %}

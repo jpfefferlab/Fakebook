@@ -1,0 +1,112 @@
+body {
+    /*background: #F8F8F8 !important;*/
+    background-color: #F0F2F5 !important;
+}
+
+.nav {
+    border-radius: 0px !important;
+    padding: 10px 0 10px 0 !important;
+    /*background-color: #396afc !important; */
+    background-color: #FFFFFF !important; 
+}
+
+a {
+    color: #000000 !important;    
+}
+a:hover:not(.active) {
+    color: #1073F2 !important;
+}
+
+.mb-7 {
+    margin-bottom: 7px !important;
+}
+
+.mt-5 {
+    margin-top: 5px !important;
+}
+
+.mymodal {
+    height: 300px !important;
+    top: 200px !important;
+    font-size: 20px !important;
+}
+
+.advertisement-modal {
+    top: 150px !important;
+}
+
+.mb-5 {
+    margin-bottom: 5px !important;
+}
+
+.w-big {
+    width: 200px !important;
+}
+
+.bwhite-lg {
+    background-color: transparent !important;
+}
+
+.bwhite-sm {
+    background-color: transparent !important;
+    width: 10px !important;
+}
+
+.comment-box {
+    display: none;
+}
+
+/*added 30-08-2022, to hover over like button and see who has liked the post*/
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+/*--------------------------------------------------------------------------*/
+
+/*added 30-08-2022 (button for flacgcount, likecount and dislikecount*/
+.btn.btn-primary:disabled{
+    color: black;
+    background-color: transparent;
+    border-color: transparent;
+}
+/*--------------------------------------------------------------------------*/
+
+/* disables a button without greying it out */
+.soft-button-disable {
+    cursor: default !important;
+    pointer-events: none !important;
+}

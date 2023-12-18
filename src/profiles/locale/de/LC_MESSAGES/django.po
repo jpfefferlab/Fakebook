@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-01 19:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: forms.py:7 templates/profiles/myprofile.html:57
+msgid "first-name"
+msgstr "Vorname"
+
+#: forms.py:8 templates/profiles/myprofile.html:61
+msgid "last-name"
+msgstr "Nachname"
+
+#: forms.py:9 templates/profiles/myprofile.html:65
+msgid "my-profile-biography"
+msgstr "Biographie"
+
+#: templates/profiles/detail.html:17
+msgid "profile-view-posts"
+msgstr "Posts"
+
+#: templates/profiles/detail.html:21
+msgid "profile-view-likes-given"
+msgstr "Vergebene Likes"
+
+#: templates/profiles/detail.html:25
+msgid "profile-view-likes-received"
+msgstr "Erhaltene Likes"
+
+#: templates/profiles/detail.html:29
+msgid "profile-view-friends"
+msgstr "Freunde"
+
+#: templates/profiles/detail.html:38 templates/profiles/profile_list.html:30
+msgid "add-to-friends"
+msgstr "Freund hinzufügen"
+
+#: templates/profiles/detail.html:43 templates/profiles/profile_list.html:35
+msgid "friend-req-awaiting"
+msgstr "Warte auf Antwort..."
+
+#: templates/profiles/detail.html:50 templates/profiles/profile_list.html:47
+msgid "remove-from-friends"
+msgstr "Freund entfernen"
+
+#: templates/profiles/detail.html:63
+msgid "profile-view-user-no-posts"
+msgstr ""
+
+#: templates/profiles/my_invites.html:10
+msgid "no-invitations-found"
+msgstr "Keine Einladungen gefunden"
+
+#: templates/profiles/my_invites.html:25
+#: templates/profiles/profile_list.html:23
+msgid "see-profile-button"
+msgstr "Profil anzeigen"
+
+#: templates/profiles/my_invites.html:32
+msgid "friend-req-accept"
+msgstr "Anfrage annehmen"
+
+#: templates/profiles/my_invites.html:40
+msgid "friend-req-reject"
+msgstr "Anfrage ablehnen"
+
+#: templates/profiles/myprofile.html:12
+msgid "profile-update-title"
+msgstr "Aktualisiere dein Profil"
+
+#: templates/profiles/myprofile.html:19
+msgid "profile-update-dialog-title"
+msgstr "Gib ein paar Infos über dich an"
+
+#: templates/profiles/myprofile.html:28
+msgid "profile-update-button"
+msgstr "Profil aktualisieren"
+
+#: templates/profiles/myprofile.html:38
+msgid "profile-updated"
+msgstr "Dein Profil wurde aktualisiert"
+
+#: templates/profiles/myprofile.html:40
+msgid "my-profile"
+msgstr "Dein Profil: "
+
+#: templates/profiles/myprofile.html:46
+msgid "myprofile-view-update-button"
+msgstr "Profil aktualisieren"
+
+#: templates/profiles/myprofile.html:53
+msgid "username"
+msgstr "Benutzername"
+
+#: templates/profiles/myprofile.html:69
+msgid "my-profile-number-of-friends"
+msgstr "Anzahl Freunde"
+
+#: templates/profiles/myprofile.html:73
+msgid "my-profil-friends-list"
+msgstr "Freunde"
+
+#: templates/profiles/myprofile.html:83
+msgid "my-profile-posts"
+msgstr "Posts"
+
+#: templates/profiles/myprofile.html:87
+msgid "my-profile-likes-given"
+msgstr "Vergebene Likes"
+
+#: templates/profiles/myprofile.html:91
+msgid "my-profile-likes-received"
+msgstr "Erhaltene Likes"
+
+#: templates/profiles/profile_list.html:39
+msgid "friend-req-received"
+msgstr "Freundschaftsanfrage erhalten"

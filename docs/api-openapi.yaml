@@ -1,0 +1,315 @@
+openapi: 3.0.0
+info:
+  title: Fakebook Management API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+components:
+  securitySchemes:
+    apikeyAuth:
+      type: http
+      scheme: apikey
+security:
+  - apikeyAuth: []
+paths:
+  /api/user:
+    post:
+      tags:
+        - default
+      summary: http://localhost:8000/api/user
+      description: Creates a new user and associated profile.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                avatar:
+                  type: string
+                  format: binary
+      parameters:
+        - name: username
+          in: query
+          schema:
+            type: string
+          description: The username of the user to be created
+          example: Matella
+        - name: password
+          in: query
+          schema:
+            type: string
+          description: The cleartext password for the new user
+          example: test
+        - name: email
+          in: query
+          schema:
+            type: string
+          description: The email address for the new user
+          example: matella@example.com
+        - name: firstName
+          in: query
+          schema:
+            type: string
+          description: The first name for the new profile
+          example: Mat
+        - name: lastName
+          in: query
+          schema:
+            type: string
+          description: The last name for the new profile
+          example: Ella
+        - name: bio
+          in: query
+          schema:
+            type: string
+          description: The biography for the new profile
+          example: This user was created using the API with an avatar.
+        - name: country
+          in: query
+          schema:
+            type: string
+          description: The country for the new profile
+          example: Germany
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/profile/relationship:
+    post:
+      tags:
+        - default
+      summary: http://localhost:8000/api/profile/relationship
+      description: Creates a new relationship (friendship) between two profiles.
+      requestBody:
+        content: {}
+      parameters:
+        - name: profileId1
+          in: query
+          schema:
+            type: integer
+          description: ProfileId1
+          example: '1'
+        - name: profileId2
+          in: query
+          schema:
+            type: integer
+          description: ProfileId2
+          example: '9'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - default
+      summary: http://localhost:8000/api/profile/relationship
+      description: Deletes a relationship between two profiles.
+      parameters:
+        - name: profileId1
+          in: query
+          schema:
+            type: integer
+          description: ProfileId1
+          example: '1'
+        - name: profileId2
+          in: query
+          schema:
+            type: integer
+          description: ProfileId2
+          example: '9'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/profile/post:
+    post:
+      tags:
+        - default
+      summary: http://localhost:8000/api/profile/post
+      description: Creates a new post. Can be in the future.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+      parameters:
+        - name: profileId
+          in: query
+          schema:
+            type: integer
+          description: The profile id of the author of the post
+          example: '15'
+        - name: created
+          in: query
+          schema:
+            type: integer
+          description: The creation date as unix (epoch) timestamp, may be in the future
+          example: '1663082878'
+        - name: content
+          in: query
+          schema:
+            type: string
+          description: The text content of the new post
+          example: this user should have an avatar
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - default
+      summary: http://localhost:8000/api/profile/post
+      description: Deletes a post.
+      parameters:
+        - name: postId
+          in: query
+          schema:
+            type: integer
+          description: The id of the post to be deleted.
+          example: '18'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/profile/post/reaction:
+    post:
+      tags:
+        - default
+      summary: http://localhost:8000/api/profile/post/reaction
+      description: >-
+        Creates a new reaction (like / dislike). This is a planned reaction. You
+        can either specify a postId OR a targetProfileId and postOffset
+        (exclusive).
+      requestBody:
+        content: {}
+      parameters:
+        - name: profileId
+          in: query
+          schema:
+            type: integer
+          description: The profile id of the reacting user
+          example: '1'
+        - name: type
+          in: query
+          schema:
+            type: string
+          description: The type of reaction ["Like", "Dislike"]
+          example: Dislike
+        - name: timeDelta
+          in: query
+          schema:
+            type: integer
+          description: >-
+            The delta in seconds to delay the reaction by after the post
+            creation date
+          example: '0'
+        - name: postId
+          in: query
+          schema:
+            type: integer
+          description: >-
+            The id of the post to react to. Specify this OR targetProfileId and
+            postOffset
+          example: '22'
+        - name: targetProfileId
+          in: query
+          schema:
+            type: integer
+          description: >-
+            The targetProfile to which to react. Also specify postOffset. Omit
+            postId!
+          example: '8'
+        - name: postOffset
+          in: query
+          schema:
+            type: integer
+          description: >-
+            The post offset to which to react (0 = first post from profile).
+            Also specify targetProfile. Omit postId.
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - default
+      summary: http://localhost:8000/api/profile/post/reaction
+      description: >-
+        Deletes a planned! reaction. If the reaction has already been executed,
+        it can't be deleted via the API anymore.
+      parameters:
+        - name: reactionId
+          in: query
+          schema:
+            type: integer
+          description: The id of the planned reaction to be deleted.
+          example: '8'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/advertisement:
+    post:
+      tags:
+        - default
+      summary: http://localhost:8000/api/advertisement
+      description: Creates a new advertisement.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  description: The image of the advertisement.
+                  format: binary
+      parameters:
+        - name: text
+          in: query
+          schema:
+            type: string
+          description: The text content of the advertisement.
+          example: This is the advertisement text
+        - name: url
+          in: query
+          schema:
+            type: string
+          description: >-
+            The url redirected to when advertisement clicked. NOT VALIDATED BY
+            THE SERVER! Check before submitting your request!
+          example: https://example.com
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - default
+      summary: http://localhost:8000/api/advertisement
+      description: Deletes an existing advertisement.
+      parameters:
+        - name: adId
+          in: query
+          schema:
+            type: integer
+          description: The id of the advertisement to be deleted.
+          example: '4'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

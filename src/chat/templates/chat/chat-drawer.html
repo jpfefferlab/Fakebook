@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% load i18n %}
+    <meta charset="UTF-8">
+    <title>Fakebook</title>
+    {% include "lib-jquery.html" %}
+    <script src="{% static "chat/chat-drawer.js" %}"></script>
+
+    {% include 'ui-template-stylesheets.html' %}
+    <link rel="stylesheet" type="text/css" href={% static 'chat/chat-drawer.css' %}>
+</head>
+<body>
+
+
+{% if chat_enabled %}
+    <div id="users-list" class="ui segments">
+        <div class="ui segment">
+            <input id="filter-textfield" type="text" placeholder="{% trans 'chat-drawer-search' %}"/>
+        </div>
+
+        {% for user in users %}
+            <div class="ui segment user-section" onclick="onChatDrawerUserClicked({{ user.profile_id }}) ">
+                <div class="profile-image">  <img class="ui avatar image" src='{{ user.avatar_image }}'> </div>
+                <div class="user-text-section">
+                    <div class="username">{{ user.username }}</div>
+                    <div class="last-message-info-section">
+                        {% if user.last_message_creation_time %}
+                            <div class="last-message-text">{{ user.last_message }}</div>
+                            <div class="last-message-time"> - {{ user.last_message_creation_time|timesince }} ago</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+{% else %}
+    <div id="user-list-not-shown-indicator" class="ui segments">
+        <div class="ui segment">
+            The chat functionality has been disabled.
+        </div>
+    </div>
+{% endif %}
+
+</body>
+</html>

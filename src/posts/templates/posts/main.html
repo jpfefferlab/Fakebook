@@ -1,0 +1,423 @@
+<!--#itest{color:blue!important;}-->
+<style>
+   ::placeholder {color:#767171!important;}
+   
+</style>
+
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}main page{% endblock title %}
+
+{% block content %}
+<div class="ui grid">
+    
+    <div class="ten wide column">
+        
+        <!-- Publish post (More about the styling can be found in forms.py)-->        
+        <div class="ui segment">
+            {% if post_added %}
+                <div class="ui green message">{% trans 'post-added-confirmation' %}</div>
+            {% endif %}
+            <form action="" method="POST" class='ui form' enctype="multipart/form-data">
+                {% csrf_token %}
+                {{p_form.content}} 
+                <div class="ui grid">
+                    <div class="one wide column"><i
+                            id="reaction-drawer-button-create-post"
+                            class="fas fa-grin"
+                            style="color: #0084FF;padding: 17px;cursor: pointer;"
+                    > </i></div>
+                    <div class="one wide column"> <button class="ui button mt-5 soft-button-disable" style='background-color:white'> <h4> <i class="far fa-images" style='color:green'></i>  </h4> </button> </div>
+                    <div class="nine wide column"> {{p_form.image}} </div>
+                    <div class="five wide right aligned column"> <button type='submit' name="submit_p_form" class="ui positive button w-full mt-5 ">{% trans 'post-send' %}</button> </div>
+                </div>
+             </form>
+        </div>
+        
+        
+        <!-- Read posts -->
+        {% for obj in qs %}
+{#        Show all: {{ show_all_posts }}<br>#}
+{#        Is {{ obj.author.user.id }} in {{ friend_user_ids }}?<br>#}
+{#            {% if obj.author.user.id == request.user.id %}#}
+{#                my own post:#}
+{#            {% endif %}#}
+        {% if show_all_posts or obj.author.user.id in friend_user_ids or obj.author.user.id == request.user.id %}
+        <div class="ui fluid card post-card">
+            <div class="content">
+                <div class="right floated meta">
+                <div class="ui grid">
+                    <div class="row">
+                        {% ifequal request.user obj.author.user %}
+                            <a href="{% url 'posts:post-update' obj.pk %}"><button class="ui button bwhite-lg ">{% trans 'post-card-update' %}</button></a>
+                            <a href="{% url 'posts:post-delete' obj.pk %}"><button class="ui button bwhite-lg ">{% trans 'post-card-delete' %}</button></a>
+                        {% endifequal %}
+                    </div>
+                </div>
+                </div>
+                <img class="ui avatar image" src={{obj.author.avatar.url}}> 
+                {{ obj.author.get_displayed_name }} - {% blocktrans with duration=obj.created|timesince %}{{ duration }} ago{% endblocktrans %}
+            </div>
+            
+            <!--Post Text-->  
+            <div class="content post-content">
+                <div class="post-id-field" style="display: none">{{ obj.id }}</div>
+                <p> {{ obj.content }} </p>
+             </div>
+             
+            <div class="ui fluid image post-image">
+                <div class="post-id-field" style="display: none">{{ obj.id }}</div>
+                {% if obj.image %}
+                    <img src={{obj.image.url}}>
+                {% endif %}
+            </div>
+            
+            
+             
+            <!--Reaction-->
+            <div class="content">
+                <div class="ui grid">
+                    
+                    
+                    <!--Flags:-->
+                    <div class="eight wide column"> 
+                        <form action="{% url 'posts:report-post-view' %}" method="POST" class='report-form' id='{{obj.id}}'>
+                            {% csrf_token %}
+                            <input type="hidden" name="post_id" value={{obj.id}}>
+                            <div class="ui grid">
+                                    <div class="tooltip">
+                                        <button type="submit" class="btn btn-primary" disabled>
+                                            <div class="report-count{{obj.id}}"> {{obj.num_reports}} </div>
+                                        </button>
+                                        <!--If you change something here, also change it in the ajax function below-->
+                                        <button type="submit" class="ui button report-btn{{obj.id}}" style='background-color:transparent;'>
+                                            {% if profile not in obj.reported.all %}
+                                                <i class="far fa-flag" style="color:#F33C57"> </i>
+                                            {% else %}
+                                                <i class="fas fa-flag" style="color:#F33C57"> </i>
+                                            {% endif %}
+                                        </button>
+
+                                        <span class="tooltiptext">
+                                            {% trans 'post-report-tooltip' %}
+                                        </span>
+                                    </div>
+                                
+                            </div>                    
+                        </form>
+                    </div> 
+		    
+		     <!--Likes--> 
+                    <div class="four wide column"> 
+                        <form action="{% url 'posts:like-post-view' %}" method="POST" class='like-form' id='{{obj.id}}'>
+                            {% csrf_token %}
+                            <input type="hidden" name="post_id" value={{obj.id}}>
+                            <div class="ui grid">
+                                <!--If you change something here, also change it in the ajax function below-->	
+                                    <div class="tooltip">  
+                                           <button type="submit" class="btn btn-primary" disabled> 
+                                               <div class="like-count{{obj.id}}"> {{obj.num_likes}}  </div>  
+                                           </button>  
+		                            <button type="submit" class="ui button like-btn{{obj.id}}" style='background-color:transparent;'>
+		                                {% if profile not in obj.liked.all %}
+		                                    <i class="far fa-thumbs-up" style="color:#1073F2"> </i>                                          
+		                                {% else %}
+		                                    <i class="fas fa-thumbs-up" style="color:#1073F2"> </i>                                            
+		                                {% endif %}    
+		                            </button>  
+
+		                            {% if obj.num_likes > 0 %}
+		                            	<span class="tooltiptext">
+		                            		 {% for person in obj.likers|slice:":4"%}
+			  					<div> {{person}} </div>
+		  					 {% endfor %}
+		  					 {% if obj.num_likes > 4 %}
+		  					       <div> {% blocktrans with obj.likers|length|add:"-4" as additional_count %}and {{ additional_count }} more{% endblocktrans %}</div>
+		  					 {% endif %} 
+	  				     	</span>
+	  				     {% endif %}  	  				     
+  				     </div>  
+                            </div>                    
+                        </form>
+                    </div> 
+                    
+                    <!--Dislikes:--> 
+                    <div class="four wide column"> 
+                        <form action="{% url 'posts:dislike-post-view' %}" method="POST" class='dislike-form' id='{{obj.id}}'>
+                            {% csrf_token %}
+                            <input type="hidden" name="post_id" value={{obj.id}}>
+                            <div class="ui grid">
+                                    <!--If you change something here, also change it in the ajax function below-->	 
+                                    <div class="tooltip">  
+                                           <button type="submit" class="btn btn-primary" disabled> 
+                                               <div class="dislike-count{{obj.id}}"> {{obj.num_dislikes}}  </div>  
+                                           </button>             
+		                            <button type="submit" class="ui button dislike-btn{{obj.id}}" style='background-color:transparent;'>
+		                                {% if profile not in obj.disliked.all %}
+		                                    <i class="far fa-thumbs-down" style="color:#1073F2"> </i>
+		                                {% else %}
+		                                    <i class="fas fa-thumbs-down" style="color:#1073F2"> </i>
+		                                {% endif %}    
+		                            </button>   
+
+				                    {% if obj.num_dislikes > 0 %}
+				                    	<span class="tooltiptext">
+				                    		 {% for person in obj.dislikers|slice:":4"%}
+				  					<div> {{person}} </div>
+			  					 {% endfor %}
+			  					 {% if obj.num_dislikes > 4 %}
+                                     <div> {% blocktrans with obj.dislikers|length|add:"-4" as additional_count %}and {{ additional_count }} more{% endblocktrans %}</div>
+			  					 {% endif %}
+		  				     	</span>
+		  				     {% endif %}  
+		  	           </div>                                 
+                            </div>                    
+                        </form>
+                    </div> 
+
+                </div>
+            </div>
+            
+            
+            {% if show_comments %}
+            <div class="extra content">                
+                <!--button class="cmt_btn ui button mb-5">show / hide comments </button-->
+                <button class="cmt_btn ui right button mb-5" style='background-color:transparent'><i class="comment icon"></i> <span> {% blocktrans count num_comments=obj.num_comments %}{{ num_comments }} comment{% plural %}{{ num_comments }} comments{% endblocktrans %}</span> </button>
+                
+                <div class="comment-box">
+                {% if obj.comment_set.all %}
+                    {% for c in obj.comment_set.all %}
+                        {% if show_all_comments or c.user.user.id in friend_user_ids or c.user.user.id == request.user.id %}
+                        <div class="ui segment mb-5" style="color: black">
+                            <img class="ui avatar image" src={{c.user.avatar.url}}>
+                            <span>{{ c.user.get_displayed_name }}</span>
+                            {% if c.spoiler %}
+                                <div class='mt-5'>
+                                    <div style="filter: blur(4px);display: inline">
+                                        {{ c.body }}
+                                    </div>
+                                    <div style="display: inline;padding-left: 0.5em;color: #0084FF;cursor: pointer;"
+                                         onclick="this.style.display = 'none'; this.parentElement.children[0].style.filter = ''"
+                                    >{% trans 'comment-spoiler-show' %}</div>
+                                </div>
+                            {% else %}
+                                <div class='mt-5'>{{ c.body }}</div>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                    
+                    {% endfor %}
+                {% endif %}
+                </div>
+  
+                
+                <form action="" method="POST"class='ui fluid form'>
+                    {% csrf_token %}
+                    <input type="hidden" name="post_id" value={{obj.id}}>
+                    <div class="ui twelve column grid">
+                        <div class="twelve wide column">
+                            {{ c_form }}
+                        </div>
+                        <div class="one wide column"><i
+                                class="fas fa-grin reaction-drawer-button-create-comment"
+                                style="color: #0084FF;padding-top: 12px;cursor: pointer;"
+                        ></i></div>
+                        <div class="three wide right aligned column">
+                            <button type="submit" name="submit_c_form" class="ui primary button w-full">{% trans 'comment-send' %}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+
+        {% endif %}
+        {% endfor %}
+    </div>
+    
+    <!-- Space bewtween posts and adverstisements -->
+    <div class="one wide column">
+         <!-- Leave empty here -->
+    </div>
+    
+    <!-- Advertisments -->
+    <div class="five wide column">
+        <h3 style='color:grey'> {% trans 'advertisement-section-header' %} </h3>
+        {% for ad in ads %}
+        <div class="ui grid"> 
+            <div id="advertisement-section-{{ ad.id }}" class="eight wide column" style="cursor: pointer">
+                {{ad.text}}
+                <img class="ui rounded medium image" src={{ad.image.url}}>
+{#                <a href="{% url 'advertisements:click-ad' ad.id %}" target="_blank"><button class="ui button bwhite-lg ">{{ad.url}}</button></a>#}
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+
+    <!-- Advertisements modal dialogs -->
+    {% for ad in ads %}
+    <div id="advertisement-modal-{{ ad.id }}" class="ui modal advertisement-modal">
+        <i class="close icon"></i>
+        <div class="header">
+            {{ ad.text }}
+        </div>
+        <div class="">
+            <div class="ui fifteen wide column">
+                <img class="ui rounded medium image centered" alt="an advertisement image" style="cursor: pointer" onclick="window.location.href = '{% url 'advertisements:click-ad' ad.id %}'" src={{ad.image.url}}>
+            </div>
+            <div class="description fifteen wide column">
+                <a href="{% url 'advertisements:click-ad' ad.id %}" target="_blank"><button class="ui button bwhite-lg ">{{ad.url}}</button></a>
+{# onclick="window.location.href = '{% url 'advertisements:click-ad' ad.id %}'" #}
+            </div>
+        </div>
+    </div>
+
+        <script>
+            $(document).ready(function() {
+                $('#advertisement-section-{{ ad.id }}').click(function() {
+                    $('#advertisement-modal-{{ ad.id }}').modal('show');
+                })
+                $('.ui.dropdown').dropdown()
+            })
+        </script>
+    {% endfor %}
+    
+</div>
+{% endblock content %}
+
+{% block scripts %} 
+    <script>
+        $( document ).ready(function() {
+            let display = false
+            $(".cmt_btn").click(function () {
+                if (display===false) {
+                    $(this).next(".comment-box").show("slow");
+                    display=true
+                } else {
+                    $(this).next(".comment-box").hide("slow");
+                    display=false
+                }  
+            });
+
+            $('.report-form').submit(function(e){
+                e.preventDefault()
+                
+                const post_id = $(this).attr('id')
+                const statushtml = $.trim($(`.report-btn${post_id}`).html())
+                const reportedhtml = '<i class="fas fa-flag" style="color:#F33C57"> </i>'
+		        const unreportedhtml = '<i class="far fa-flag" style="color:#F33C57"> </i>'   
+                const url = $(this).attr('action')
+                
+                let res;
+                const reports = $(`.report-count${post_id}`).text()
+                const trimCount = parseInt(reports)              
+                
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: {
+                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+                        'post_id':post_id,
+                    },
+                    success: function(response) {                        
+                        if(statushtml === reportedhtml) {
+                            $(`.report-btn${post_id}`).html(unreportedhtml)
+                            res = trimCount - 1
+                        } else {
+                            $(`.report-btn${post_id}`).html(reportedhtml)
+                            res = trimCount + 1
+                        }
+
+                        $(`.report-count${post_id}`).text(res)
+                    },
+                    error: function(response) {
+                        console.log('error', response)
+                    }
+                })
+
+            })
+
+            $('.like-form').submit(function(e){
+                e.preventDefault()
+                
+                const post_id = $(this).attr('id')
+                const statushtml = $.trim($(`.like-btn${post_id}`).html())
+                const likedhtml = '<i class="fas fa-thumbs-up" style="color:#1073F2"> </i>'
+		        const unlikedhtml = '<i class="far fa-thumbs-up" style="color:#1073F2"> </i>'   
+                const url = $(this).attr('action')
+                
+                let res;
+                const likes = $(`.like-count${post_id}`).text()
+                const trimCount = parseInt(likes)
+                
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: {
+                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+                        'post_id':post_id,
+                    },
+                    success: function(response) {                        
+                        if(statushtml === likedhtml) {
+                            $(`.like-btn${post_id}`).html(unlikedhtml)
+                            res = trimCount - 1
+                        } else {
+                            $(`.like-btn${post_id}`).html(likedhtml)
+                            res = trimCount + 1
+                        }
+
+                        $(`.like-count${post_id}`).text(res)
+                    },
+                    error: function(response) {
+                        console.log('error', response)
+                    }
+                })
+            })
+
+            $('.dislike-form').submit(function(e){
+                e.preventDefault()
+                
+                const post_id = $(this).attr('id')
+                const statushtml = $.trim($(`.dislike-btn${post_id}`).html())
+                const dislikedhtml = '<i class="fas fa-thumbs-down" style="color:#1073F2"> </i>'
+		        const undislikedhtml = '<i class="far fa-thumbs-down" style="color:#1073F2"> </i>'   
+                const url = $(this).attr('action')
+                
+                let res;
+                const dislikes = $(`.dislike-count${post_id}`).text()
+                const trimCount = parseInt(dislikes)
+                
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: {
+                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+                        'post_id':post_id,
+                    },
+                    success: function(response) {                        
+                        if(statushtml === dislikedhtml) {
+                            $(`.dislike-btn${post_id}`).html(undislikedhtml)
+                            res = trimCount - 1
+                        } else {
+                            $(`.dislike-btn${post_id}`).html(dislikedhtml)
+                            res = trimCount + 1
+                        }
+
+                        $(`.dislike-count${post_id}`).text(res)
+                    },
+                    error: function(response) {
+                        console.log('error', response)
+                    }
+                })
+            })
+
+
+        });
+    </script>
+    <script src="{% static "analytics/analytics-posts.js" %}"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+    <script src="{% static "posts-emoji-picker.js" %}"></script>
+{% endblock scripts %}

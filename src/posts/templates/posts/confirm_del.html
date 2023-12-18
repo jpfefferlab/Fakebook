@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+delete post
+{% endblock title %}
+
+{% block content %}
+
+    {% if messages.added_new %}
+        {% for message in messages %}
+            {% if 'warning' in message.tags %}
+                <div class='ui negative message'>
+                    <div class="header">
+                        {{message}}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    {% if not messages.added_new %}
+        <div class="ui segment">
+            <h3>{% trans 'delete-post-header' %}</h3>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <p>{% trans 'delete-post-confirm-message' %}</p>
+                <button type='submit'>{% trans 'submit' %}</button>
+            </form>
+        </div>
+    {% endif %}
+
+{% endblock content %}

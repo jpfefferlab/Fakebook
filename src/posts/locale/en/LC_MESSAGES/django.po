@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-20 19:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: forms.py:8
+msgid "post_creation_prompt"
+msgstr "Write a post..."
+
+#: forms.py:16
+msgid "comment_creation_prompt"
+msgstr "Add a comment..."
+
+#: templates/posts/confirm_del.html:23
+msgid "delete-post-header"
+msgstr "Delete post?"
+
+#: templates/posts/confirm_del.html:26
+msgid "delete-post-confirm-message"
+msgstr "Are you sure you want to delete the post?"
+
+#: templates/posts/confirm_del.html:27
+msgid "submit"
+msgstr "Submit"
+
+#: templates/posts/main.html:21
+msgid "post-added-confirmation"
+msgstr "Post added"
+
+#: templates/posts/main.html:34
+msgid "post-send"
+msgstr "Send"
+
+#: templates/posts/main.html:54
+msgid "post-card-update"
+msgstr "Update"
+
+#: templates/posts/main.html:55
+msgid "post-card-delete"
+msgstr "Delete"
+
+#: templates/posts/main.html:61
+#, python-format
+msgid "%(duration)s ago"
+msgstr "%(duration)s ago"
+
+#: templates/posts/main.html:104
+msgid "post-report-tooltip"
+msgstr "Report post"
+
+#: templates/posts/main.html:137 templates/posts/main.html:171
+#, python-format
+msgid "and %(additional_count)s more"
+msgstr "and %(additional_count)s more"
+
+#: templates/posts/main.html:187
+#, python-format
+msgid "%(num_comments)s comment"
+msgid_plural "%(num_comments)s comments"
+msgstr[0] "%(num_comments)s comment"
+msgstr[1] "%(num_comments)s comments"
+
+#: templates/posts/main.html:203
+msgid "comment-spoiler-show"
+msgstr "Show"
+
+#: templates/posts/main.html:228
+msgid "comment-send"
+msgstr "Send"
+
+#: templates/posts/main.html:247
+msgid "advertisement-section-header"
+msgstr "Sponsored"
+
+#: templates/posts/update.html:9
+msgid "post-update-title"
+msgstr "Update post"
+
+#: templates/posts/update.html:13
+msgid "post-update-button"
+msgstr "Update"
+
+#: utils.py:11
+msgctxt "additional_count"
+msgid "additional-likes-format"
+msgstr "and %(additional_count) more"
+
+#: views.py:193
+msgid "post-delete-error-no-author"
+msgstr "You need to be the author of this post in order to delete it"
+
+#: views.py:208
+msgid "post-update-error-no-author"
+msgstr "You need to be the author of this post in order to update it"
+
+#~ msgid "name-of-a-friend"
+#~ msgstr "name of a friend..."

@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "719ec33f-0113-4915-a66b-ebc1b97e9d4d",
+		"name": "Fakebook Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/api/user",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/home/geosearchef/nextcloud/Profilbild/MatellaIconSmall.png"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user?username=Matella&password=test&email=matella@example.com&firstName=Mat&lastName=Ella&bio=This user was created using the API with an avatar.&country=Germany",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Matella",
+							"description": "The username of the user to be created"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"description": "The cleartext password for the new user"
+						},
+						{
+							"key": "email",
+							"value": "matella@example.com",
+							"description": "The email address for the new user"
+						},
+						{
+							"key": "firstName",
+							"value": "Mat",
+							"description": "The first name for the new profile"
+						},
+						{
+							"key": "lastName",
+							"value": "Ella",
+							"description": "The last name for the new profile"
+						},
+						{
+							"key": "bio",
+							"value": "This user was created using the API with an avatar.",
+							"description": "The biography for the new profile"
+						},
+						{
+							"key": "country",
+							"value": "Germany",
+							"description": "The country for the new profile"
+						}
+					]
+				},
+				"description": "Creates a new user and associated profile."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/profile/relationship",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/profile/relationship?profileId1=1&profileId2=9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile",
+						"relationship"
+					],
+					"query": [
+						{
+							"key": "profileId1",
+							"value": "1",
+							"description": "ProfileId1"
+						},
+						{
+							"key": "profileId2",
+							"value": "9",
+							"description": "ProfileId2"
+						}
+					]
+				},
+				"description": "Creates a new relationship (friendship) between two profiles."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/profile/relationship",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/profile/relationship?profileId1=1&profileId2=9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile",
+						"relationship"
+					],
+					"query": [
+						{
+							"key": "profileId1",
+							"value": "1",
+							"description": "ProfileId1"
+						},
+						{
+							"key": "profileId2",
+							"value": "9",
+							"description": "ProfileId2"
+						}
+					]
+				},
+				"description": "Deletes a relationship between two profiles."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/profile/post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"contentType": "",
+							"type": "file",
+							"src": "/home/geosearchef/nextcloud/Profilbild/Kirella.png",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/profile/post?profileId=15&created=1663082878&content=this user should have an avatar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile",
+						"post"
+					],
+					"query": [
+						{
+							"key": "profileId",
+							"value": "15",
+							"description": "The profile id of the author of the post"
+						},
+						{
+							"key": "created",
+							"value": "1663082878",
+							"description": "The creation date as unix (epoch) timestamp, may be in the future"
+						},
+						{
+							"key": "content",
+							"value": "this user should have an avatar",
+							"description": "The text content of the new post"
+						}
+					]
+				},
+				"description": "Creates a new post. Can be in the future."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/profile/post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/profile/post?postId=18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile",
+						"post"
+					],
+					"query": [
+						{
+							"key": "postId",
+							"value": "18",
+							"description": "The id of the post to be deleted."
+						}
+					]
+				},
+				"description": "Deletes a post."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/profile/post/reaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/profile/post/reaction?profileId=1&type=Dislike&timeDelta=0&postId=22&targetProfileId=8&postOffset=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile",
+						"post",
+						"reaction"
+					],
+					"query": [
+						{
+							"key": "profileId",
+							"value": "1",
+							"description": "The profile id of the reacting user"
+						},
+						{
+							"key": "type",
+							"value": "Dislike",
+							"description": "The type of reaction [\"Like\", \"Dislike\"]"
+						},
+						{
+							"key": "timeDelta",
+							"value": "0",
+							"description": "The delta in seconds to delay the reaction by after the post creation date"
+						},
+						{
+							"key": "postId",
+							"value": "22",
+							"description": "The id of the post to react to. Specify this OR targetProfileId and postOffset"
+						},
+						{
+							"key": "targetProfileId",
+							"value": "8",
+							"description": "The targetProfile to which to react. Also specify postOffset. Omit postId!"
+						},
+						{
+							"key": "postOffset",
+							"value": "2",
+							"description": "The post offset to which to react (0 = first post from profile). Also specify targetProfile. Omit postId."
+						}
+					]
+				},
+				"description": "Creates a new reaction (like / dislike). This is a planned reaction. You can either specify a postId OR a targetProfileId and postOffset (exclusive)."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/profile/post/reaction",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/profile/post/reaction?reactionId=8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile",
+						"post",
+						"reaction"
+					],
+					"query": [
+						{
+							"key": "reactionId",
+							"value": "8",
+							"description": "The id of the planned reaction to be deleted."
+						}
+					]
+				},
+				"description": "Deletes a planned! reaction. If the reaction has already been executed, it can't be deleted via the API anymore."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/advertisement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"contentType": "",
+							"description": "The image of the advertisement.",
+							"type": "file",
+							"src": "/home/geosearchef/nextcloud/Profilbild/Kirella.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/advertisement?text=This is the advertisement text&url=https://example.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"advertisement"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "This is the advertisement text",
+							"description": "The text content of the advertisement."
+						},
+						{
+							"key": "url",
+							"value": "https://example.com",
+							"description": "The url redirected to when advertisement clicked. NOT VALIDATED BY THE SERVER! Check before submitting your request!"
+						}
+					]
+				},
+				"description": "Creates a new advertisement."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/advertisement",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/advertisement?adId=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"advertisement"
+					],
+					"query": [
+						{
+							"key": "adId",
+							"value": "4",
+							"description": "The id of the advertisement to be deleted."
+						}
+					]
+				},
+				"description": "Deletes an existing advertisement."
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "KUnVaB3VViHaRT4A",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

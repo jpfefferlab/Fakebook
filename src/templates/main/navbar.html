@@ -1,0 +1,74 @@
+{% load i18n %}
+
+{% url 'home-view' as path_to_home %}
+{% url 'posts:main-post-view' as path_to_posts %}
+{% url 'profiles:my-profile-view' as path_to_my_profile %}
+{% url 'profiles:my-invites-view' as path_to_my_invites %}
+{% url 'profiles:invite-profiles-view' as path_to_invites %}
+{% url 'profiles:all-profiles-view' as path_to_all_profiles %}
+
+
+<div class="ui secondary menu nav">
+  {% if not request.user.is_authenticated %}
+  <div class="ui container" >
+    <a href="{{path_to_home}}" class="{% if request.path == path_to_home %}active{% endif %} item">
+       <i class="fab fa-facebook"></i> 
+    </a>
+  </div> 
+  <a href="{% url 'account_login' %}" class="ui item">
+        Login
+  </a>
+  {% else %}
+  <div class="ui container" >
+    <!-- Link to home-Screen mit Posts-->
+    <a class="blue item">
+       <i class="fab fa-facebook"></i> 
+    </a>
+    <!-- Suchzeile -->
+    <div class="item">
+        <form action="" method="GET">
+            <div class="ui action left icon input">
+                <input class="prompt" type="text" name='q' placeholder="{% trans 'name-of-a-friend' %}"></input>
+                <i class="search icon"></i>
+                <button type='submit' class="ui button">{% trans 'Search' %}</button>
+            </div>
+        </form>
+    </div>
+  </div>
+    
+  <div class="ui container"  >
+    <!-- Second Link to home-Screen -->
+    <a href="{{path_to_posts}}" class="{% if request.path == path_to_posts %}active{% endif %} item">
+        <i class="fas fa-home"></i> 
+    </a>
+    <!-- Link to Friends-Page -->
+    <a href="{{path_to_all_profiles}}" class="{% if request.path == path_to_all_profiles %}active{% endif %} item">
+        <i class="fas fa-user-friends"></i> 
+    </a>
+    <!-- Link to Chat -->
+    <a id="chat-drawer-toggle-button" class="item" onclick="toggleChatDrawer(event.clientX, event.clientY)">
+        <i class="fab fa-facebook-messenger"></i> 
+    </a>
+
+    <!-- a href="{{path_to_invites}}" class="{% if request.path == path_to_invites %}active{% endif %} item"-->
+    <!-- a href="{{path_to_my_invites}}" class="{% if request.path == path_to_my_invites %}active{% endif %} item"-->
+  
+  
+  <div class="right menu" >
+    <!-- Path to Profile -->
+    <a href="{{path_to_my_profile}}" class="{% if request.path == path_to_my_profile %}active{% endif %} item">
+        <img src={{picture.url}} class="ui avatar image">&nbsp;
+            {{ request.user }}
+    </a>
+
+    <!-- Logout -->
+    <a href="{% url 'account_logout' %}" class="ui item">
+      <i class="fas fa-sign-out-alt"> </i> 
+    </a>
+  </div > 
+  </div>
+  
+
+
+  {% endif %}
+</div>
