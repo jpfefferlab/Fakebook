@@ -6,6 +6,12 @@ This is the main repository of the Fakebook project, a tool capable of simulatin
 ![The main page of Fakebook, showing a header, a post with text and an image, and a chat window.](docs/images/fakebook-main.png)
 <!-- ![The login screen of Fakebook showing username and password fields as well as a login and register button.](images/fakebook-login.png) -->
 
+## Access
+We offer access to Fakebook in two different ways:
+1) Researchers can get free online access to the tool. We will create a new instance on a university server within the EU, and the researcher receives sole admin access for this instance, with which he or she can inspect and control all data on this instance. If you would like to have online access, please send an email with your name, institution, start date and anticipated end date of the project to support@fakebook.projects.bayern.de
+
+2) One can download the open-source project from this Github repository and either install the system on their own server with a Docker container or with manual deployment. For this option, please read the following documentation carefully.
+   
 ## Deployment
 Fakebook is a web app and can be used with any modern Desktop or Mobile web browser.
 All administration functionality is available via the user interface admin route (https://example.com/admin) or via an API (https://example.com/api).
