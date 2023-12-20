@@ -1,16 +1,22 @@
 
 # Fakebook
 
-This is the main repository of the Fakebook project, a tool capable of simulating a social media environment similar to Facebook for research purposes.
+This is the main repository of the Fakebook project, a tool capable of simulating a social media environment similar to Facebook for research purposes. This tool
+can be used by researchers to study complex interactions and behavioral patterns in a controllable environment.
 
 ![The main page of Fakebook, showing a header, a post with text and an image, and a chat window.](docs/images/fakebook-main.png)
 <!-- ![The login screen of Fakebook showing username and password fields as well as a login and register button.](images/fakebook-login.png) -->
 
-## Access
+## Using the tool
 We offer access to Fakebook in two different ways:
-1) Researchers can get free online access to the tool. We will create a new instance on a university server within the EU, and the researcher receives sole admin access for this instance, with which he or she can inspect and control all data on this instance. If you would like to have online access, please send an email with your name, institution, start date and anticipated end date of the project to support@fakebook.projects.bayern.de
+1) Researchers can get free online access to the tool. We will create a new instance on a university server within the EU, and the researcher receives sole admin access for this instance. Thus, the researcher becomes the project maintainer of his or her instance and can inspect and control all data on this instance. If you would like to have online access, please send an email with your name, institution, start date and anticipated end date of the project to support@fakebook.projects.bayern
 
-2) One can download the open-source project from this Github repository and either install the system on their own server with a Docker container or with manual deployment. For this option, please read the following documentation carefully.
+2) Researchers can download the open-source project from this Github repository and either install the system on their own server with a Docker container or with manual deployment. By this, the researcher becomes the project maintainer of his or her system and can inspect and control all data on this system. For this option, please read the following documentation carefully.
+
+Important:
+* When using out tool for research purposes, please cite our paper: Voggenreiter, A; Brandt S; Putterer, F; Frings, A and Pfeffer J. The Role of Likes: How Online Feedback Impacts Users' Mental Health (2023). 
+https://arxiv.org/abs/2312.11914
+* Fakebook allows to setup a Social-Media-Environment, in which users can interact freely. Every interaction can be watched and controlled by the project maintainer (e.g. the researcher). The project maintainer is responsible for everything happening on his or her social media environment. The tool should be used in an ethical responsible manner. Study participants and other users of the social media environment have to be informed that all of their data can be inspected by the project maintainer. The project maintainers are responsible for clarifying the standards of acceptable and hatefree behavior and are expected to take appropriate and fair corrective action in response to any instances of unacceptable behavior. Project maintainers have the right and responsibility to remove, edit, or reject posts and comments, or to ban temporarily or permanently any user for other behaviors that they deem inappropriate, threatening, offensive, illegal or harmful.
    
 ## Deployment
 Fakebook is a web app and can be used with any modern Desktop or Mobile web browser.
