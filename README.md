@@ -337,8 +337,6 @@ You also have to do this if you modify them later on.
 Some other noteworthy information:
 
 #### User-Profile Duality:
-Just like with the particle-wave duality, you never know what you're dealing with. Is it called a login? That's a user. Is it called a user? Might as well be a profile. Is it called a profile? Also a profile. Author? Euhm, don't ask me.
-
 Fakebook uses a framework for user authentication which brings its own `User` class. Additionally, on user creation, it creates and links its own `Profile` object to the new user. The <span style="text-decoration: underline">**user is used for authentication**</span> (loginname, password, email), the <span style="text-decoration: underline">**profile for everything else**</span> Fakebook related (firstname, lastname, bio, ...).
 
 There are some duplicate fields on them, `firstname` and `lastname` on the `User` are ignored, and `email` on the `profile` is ignored.
@@ -347,7 +345,4 @@ The variable naming in code is quite inconsistent. In most cases relating to bus
 
 #### Displaynames
 If you set a firstname on a user's profile, it will be displayed instead of the username.
-
-#### Setup Script
-A sample setup script which was used for creating and populating user accounts for a social media study that uses the API to do so can be found in [setup-script/New_User_Setup.ipynb](setup-script/New_User_Setup.ipynb)
 
